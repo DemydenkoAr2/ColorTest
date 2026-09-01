@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&family=Nunito+Sans:wght@300..900&family=Fredoka:wght@300..600&family=Manrope:wght@400..800&family=Quicksand:wght@400..700&family=Mulish:wght@300..900&family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=Figtree:wght@300..900&display=swap" rel="stylesheet">
+<style>
+  body { margin: 0; background: #F4F1EC; }
+  a { color: #E0517A; text-decoration: none; }
+  a:hover { color: #B93A5C; }
+</style>
+</helmet>
+
+<section style="padding: 56px 48px 24px; font-family: 'Nunito Sans', sans-serif;">
+  <div style="max-width: 1720px; margin: 0 auto; display: flex; flex-direction: column; gap: 40px;">
+    <div style="display: flex; flex-direction: column; gap: 10px; max-width: 800px;">
+      <div style="font: 600 13px/1 'Nunito Sans', sans-serif; letter-spacing: 0.14em; text-transform: uppercase; color: #8A8377;">Round 2 · your picked colors, with states</div>
+      <h1 style="margin: 0; font: 700 44px/1.08 'Baloo 2', cursive; color: #2E2A26; letter-spacing: -0.01em;">Interaction scale + palette combos</h1>
+      <p style="margin: 0; font: 400 17px/1.6 'Nunito Sans', sans-serif; color: #5C554C; text-wrap: pretty;"><a href="#2a">2a</a> gives every color you picked a full ramp: default, hover, active, soft tint for backgrounds. <a href="#2b">2b</a> assembles them into three working combos — hover and press the buttons, they're live.</p>
+    </div>
+
+    <div id="2a" style="background: #FFFDF9; border: 1px solid #E7E0D5; border-radius: 28px; padding: 28px 32px 32px; box-shadow: 0 18px 40px -28px rgba(46,42,38,0.35);">
+      <div style="display: flex; align-items: baseline; gap: 14px; padding-bottom: 6px;">
+        <span style="font: 700 12px/1 'Nunito Sans', sans-serif; letter-spacing: 0.1em; color: #FFF; background: #2E2A26; padding: 7px 11px; border-radius: 999px;">2A</span>
+        <h2 style="margin: 0; font: 700 26px/1 'Baloo 2', cursive; color: #2E2A26;">The ramp</h2>
+        <span style="font: 400 14px/1.4 'Nunito Sans', sans-serif; color: #8A8377;">Hover darkens ~10%, active ~20%. Darks lighten instead. Tint = surface / chip background.</span>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 20px; padding-top: 18px;">
+
+        <div style="border: 1px solid #EFE8DC; border-radius: 18px; overflow: hidden; background: #FFF;">
+          <div style="background: #E8467C; padding: 18px 16px 16px; display: flex; flex-direction: column; gap: 2px;"><span style="font: 700 16px/1.2 'Nunito Sans', sans-serif; color: #FFF0F5;">Raspberry</span><span style="font: 600 12px/1.2 'Nunito Sans', sans-serif; color: rgba(255,240,245,0.8);">#E8467C · default</span></div>
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr);">
+            <div style="background: #CE3568; padding: 12px 10px; font: 700 11px/1.4 'Nunito Sans', sans-serif; color: #FFF0F5;">HOVER<br>#CE3568</div>
+            <div style="background: #B22A56; padding: 12px 10px; font: 700 11px/1.4 'Nunito Sans', sans-serif; color: #FFF0F5;">ACTIVE<br>#B22A56</div>
+            <div style="background: #FCE7EE; padding: 12px 10px; font: 700 11px/1.4 'Nunito Sans', sans-serif; color: #A03A63;">TINT<br>#FCE7EE</div>
+          </div>
+        </div>
+
+        <div style="border: 1px solid #EFE8DC; border-radius: 18px; overflow: hidden; background: #FFF;">
+          <div style="background: #F2568F; padding: 18px 16px 16px; display: flex; flex-direction: column; gap: 2px;"><span style="font: 700 16px/1.2 'Nunito Sans', sans-serif; color: #FFEAF2;">Fuchsia</span><span style="font: 600 12px/1.2 'Nunito Sans', sans-serif; color: rgba(255,234,242,0.8);">#F2568F · default</span></div>
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr);">
+            <div style="background: #D8447A; padding: 12px 10px; font: 700 11px/1.4 'Nunito Sans', sans-serif; color: #FFEAF2;">HOVER<br>#D8447A</div>
+            <div style="background: #BC3466; padding: 12px 10px; font: 700 11px/1.4 'Nunito Sans', sans-serif; color: #FFEAF2;">ACTIVE<br>#BC3466</div>
+            <div style="background: #FDE8EF; padding: 12px 10px; font: 700 11px/1.4 'Nunito Sans', sans-serif; color: #A8305B;">TINT<br>#FDE8EF</div>
+          </div>
+        </div>
+
+        <div style="border: 1px solid #EFE8DC; border-radius: 18px; overflow: hidden; background: #FFF;">
+          <div style="background: #FF9BB3; padding: 18px 16px 16px; display: flex; flex-direction: column; gap: 2px;"><span style="font: 700 16px/1.2 'Nunito Sans', sans-serif; color: #6B1930;">Blossom</span><span style="font: 600 12px/1.2 'Nunito Sans', sans-serif; color: rgba(107,25,48,0.72);">#FF9BB3 · default</span></div>
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr);">
+            <div style="background: #F87C9B; padding: 12px 10px; font: 700 11px/1.4 'Nunito Sans', sans-serif; color: #6B1930;">HOVER<br>#F87C9B</div>
+            <div style="background: #E45F81; padding: 12px 10px; font: 700 11px/1.4 'Nunito Sans', sans-serif; color: #FFF0F4;">ACTIVE<br>#E45F81</div>
+            <div style="background: #FFEBF0; padding: 12px 10px; font: 700 11px/1.4 'Nunito Sans', sans-serif; color: #8E2A45;">TINT<br>#FFEBF0</div>
+          </div>
+        </div>
+
+        <div style="border: 1px solid #EFE8DC; border-radius: 18px; overflow: hidden; background: #FFF;">
+          <div style="background: #FCDCE7; padding: 18px 16px 16px; display: flex; flex-direction: column; gap: 2px;"><span style="font: 700 16px/1.2 'Nunito Sans', sans-serif; color: #A03A63;">Powder</span><span style="font: 600 12px/1.2 'Nunito Sans', sans-serif; color: rgba(160,58,99,0.75);">#FCDCE7 · default</span></div>
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr);">
+            <div style="background: #F7C6D8; padding: 12px 10px; font: 700 11px/1.4 'Nunito Sans', sans-serif; color: #A03A63;">HOVER<br>#F7C6D8</div>
+            <div style="background: #EFAEC5; padding: 12px 10px; font: 700 11px/1.4 'Nunito Sans', sans-serif; color: #7E2A4B;">ACTIVE<br>#EFAEC5</div>
+            <div style="background: #FEF3F7; padding: 12px 10px; font: 700 11px/1.4 'Nunito Sans', sans-serif; color: #A03A63;">TINT<br>#FEF3F7</div>
+          </div>
+        </div>
+
+        <div style="border: 1px solid #EFE8DC; border-radius: 18px; overflow: hidden; background: #FFF;">
+          <div style="background: #4FA9F5; padding: 18px 16px 16px; display: flex; flex-direction: column; gap: 2px;"><span style="font: 700 16px/1.2 'Nunito Sans', sans-serif; color: #04294A;">Sky</span><span style="font: 600 12px/1.2 'Nunito Sans', sans-serif; color: rgba(4,41,74,0.7);">#4FA9F5 · default</span></div>
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr);">
+            <div style="background: #3690DC; padding: 12px 10px; font: 700 11px/1.4 'Nunito Sans', sans-serif; color: #EAF4FE;">HOVER<br>#3690DC</div>
+            <div style="background: #2477BE; padding: 12px 10px; font: 700 11px/1.4 'Nunito Sans', sans-serif; color: #EAF4FE;">ACTIVE<br>#2477BE</div>
+            <div style="background: #E4F1FE; padding: 12px 10px; font: 700 11px/1.4 'Nunito Sans', sans-serif; color: #1A5D97;">TINT<br>#E4F1FE</div>
+          </div>
+        </div>
+
+        <div style="border: 1px solid #EFE8DC; border-radius: 18px; overflow: hidden; background: #FFF;">
+          <div style="background: #26C6C6; padding: 18px 16px 16px; display: flex; flex-direction: column; gap: 2px;"><span style="font: 700 16px/1.2 'Nunito Sans', sans-serif; color: #023B3B;">Aqua</span><span style="font: 600 12px/1.2 'Nunito Sans', sans-serif; color: rgba(2,59,59,0.7);">#26C6C6 · default</span></div>
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr);">
+            <div style="background: #1BA9A9; padding: 12px 10px; font: 700 11px/1.4 'Nunito Sans', sans-serif; color: #E4F8F8;">HOVER<br>#1BA9A9</div>
+            <div style="background: #128C8C; padding: 12px 10px; font: 700 11px/1.4 'Nunito Sans', sans-serif; color: #E4F8F8;">ACTIVE<br>#128C8C</div>
+            <div style="background: #DDF5F5; padding: 12px 10px; font: 700 11px/1.4 'Nunito Sans', sans-serif; color: #0A6767;">TINT<br>#DDF5F5</div>
+          </div>
+        </div>
+
+        <div style="border: 1px solid #EFE8DC; border-radius: 18px; overflow: hidden; background: #FFF;">
+          <div style="background: #3FC1A0; padding: 18px 16px 16px; display: flex; flex-direction: column; gap: 2px;"><span style="font: 700 16px/1.2 'Nunito Sans', sans-serif; color: #06382C;">Mint</span><span style="font: 600 12px/1.2 'Nunito Sans', sans-serif; color: rgba(6,56,44,0.7);">#3FC1A0 · default</span></div>
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr);">
+            <div style="background: #2FA588; padding: 12px 10px; font: 700 11px/1.4 'Nunito Sans', sans-serif; color: #E3F7F1;">HOVER<br>#2FA588</div>
+            <div style="background: #22876F; padding: 12px 10px; font: 700 11px/1.4 'Nunito Sans', sans-serif; color: #E3F7F1;">ACTIVE<br>#22876F</div>
+            <div style="background: #E1F6F0; padding: 12px 10px; font: 700 11px/1.4 'Nunito Sans', sans-serif; color: #146353;">TINT<br>#E1F6F0</div>
+          </div>
+        </div>
+
+        <div style="border: 1px solid #EFE8DC; border-radius: 18px; overflow: hidden; background: #FFF;">
+          <div style="background: #0FA98C; padding: 18px 16px 16px; display: flex; flex-direction: column; gap: 2px;"><span style="font: 700 16px/1.2 'Nunito Sans', sans-serif; color: #E6FFF8;">Teal</span><span style="font: 600 12px/1.2 'Nunito Sans', sans-serif; color: rgba(230,255,248,0.8);">#0FA98C · default</span></div>
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr);">
+            <div style="background: #0A8F76; padding: 12px 10px; font: 700 11px/1.4 'Nunito Sans', sans-serif; color: #E6FFF8;">HOVER<br>#0A8F76</div>
+            <div style="background: #06755F; padding: 12px 10px; font: 700 11px/1.4 'Nunito Sans', sans-serif; color: #E6FFF8;">ACTIVE<br>#06755F</div>
+            <div style="background: #DAF3EE; padding: 12px 10px; font: 700 11px/1.4 'Nunito Sans', sans-serif; color: #06614F;">TINT<br>#DAF3EE</div>
+          </div>
+        </div>
+
+        <div style="border: 1px solid #EFE8DC; border-radius: 18px; overflow: hidden; background: #FFF;">
+          <div style="background: #FFD86B; padding: 18px 16px 16px; display: flex; flex-direction: column; gap: 2px;"><span style="font: 700 16px/1.2 'Nunito Sans', sans-serif; color: #5C4200;">Vanilla</span><span style="font: 600 12px/1.2 'Nunito Sans', sans-serif; color: rgba(92,66,0,0.7);">#FFD86B · default</span></div>
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr);">
+            <div style="background: #F5C63F; padding: 12px 10px; font: 700 11px/1.4 'Nunito Sans', sans-serif; color: #5C4200;">HOVER<br>#F5C63F</div>
+            <div style="background: #DFAE22; padding: 12px 10px; font: 700 11px/1.4 'Nunito Sans', sans-serif; color: #3D2C00;">ACTIVE<br>#DFAE22</div>
+            <div style="background: #FFF6DC; padding: 12px 10px; font: 700 11px/1.4 'Nunito Sans', sans-serif; color: #6B4E00;">TINT<br>#FFF6DC</div>
+          </div>
+        </div>
+
+        <div style="border: 1px solid #EFE8DC; border-radius: 18px; overflow: hidden; background: #FFF;">
+          <div style="background: #FFCE1F; padding: 18px 16px 16px; display: flex; flex-direction: column; gap: 2px;"><span style="font: 700 16px/1.2 'Nunito Sans', sans-serif; color: #4A3A00;">Lemon</span><span style="font: 600 12px/1.2 'Nunito Sans', sans-serif; color: rgba(74,58,0,0.7);">#FFCE1F · default</span></div>
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr);">
+            <div style="background: #EBB800; padding: 12px 10px; font: 700 11px/1.4 'Nunito Sans', sans-serif; color: #4A3A00;">HOVER<br>#EBB800</div>
+            <div style="background: #CC9F00; padding: 12px 10px; font: 700 11px/1.4 'Nunito Sans', sans-serif; color: #FFF8DD;">ACTIVE<br>#CC9F00</div>
+            <div style="background: #FFF6D2; padding: 12px 10px; font: 700 11px/1.4 'Nunito Sans', sans-serif; color: #6B5400;">TINT<br>#FFF6D2</div>
+          </div>
+        </div>
+
+        <div style="border: 1px solid #EFE8DC; border-radius: 18px; overflow: hidden; background: #FFF;">
+          <div style="background: #FFE3D2; padding: 18px 16px 16px; display: flex; flex-direction: column; gap: 2px;"><span style="font: 700 16px/1.2 'Nunito Sans', sans-serif; color: #8A5334;">Peach</span><span style="font: 600 12px/1.2 'Nunito Sans', sans-serif; color: rgba(138,83,52,0.75);">#FFE3D2 · default</span></div>
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr);">
+            <div style="background: #FCD2B9; padding: 12px 10px; font: 700 11px/1.4 'Nunito Sans', sans-serif; color: #8A5334;">HOVER<br>#FCD2B9</div>
+            <div style="background: #F3BF9F; padding: 12px 10px; font: 700 11px/1.4 'Nunito Sans', sans-serif; color: #6E3E22;">ACTIVE<br>#F3BF9F</div>
+            <div style="background: #FFF4EC; padding: 12px 10px; font: 700 11px/1.4 'Nunito Sans', sans-serif; color: #8A5334;">TINT<br>#FFF4EC</div>
+          </div>
+        </div>
+
+        <div style="border: 1px solid #EFE8DC; border-radius: 18px; overflow: hidden; background: #FFF;">
+          <div style="background: #D8F2E9; padding: 18px 16px 16px; display: flex; flex-direction: column; gap: 2px;"><span style="font: 700 16px/1.2 'Nunito Sans', sans-serif; color: #16302A;">Frost</span><span style="font: 600 12px/1.2 'Nunito Sans', sans-serif; color: rgba(22,48,42,0.7);">#D8F2E9 · default</span></div>
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr);">
+            <div style="background: #C0E8DA; padding: 12px 10px; font: 700 11px/1.4 'Nunito Sans', sans-serif; color: #16302A;">HOVER<br>#C0E8DA</div>
+            <div style="background: #A6DBC9; padding: 12px 10px; font: 700 11px/1.4 'Nunito Sans', sans-serif; color: #0F2621;">ACTIVE<br>#A6DBC9</div>
+            <div style="background: #EEFAF6; padding: 12px 10px; font: 700 11px/1.4 'Nunito Sans', sans-serif; color: #1D4A3E;">TINT<br>#EEFAF6</div>
+          </div>
+        </div>
+
+        <div style="border: 1px solid #EFE8DC; border-radius: 18px; overflow: hidden; background: #FFF;">
+          <div style="background: #2E2A26; padding: 18px 16px 16px; display: flex; flex-direction: column; gap: 2px;"><span style="font: 700 16px/1.2 'Nunito Sans', sans-serif; color: #F4F1EC;">Ink</span><span style="font: 600 12px/1.2 'Nunito Sans', sans-serif; color: rgba(244,241,236,0.72);">#2E2A26 · default</span></div>
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr);">
+            <div style="background: #45403A; padding: 12px 10px; font: 700 11px/1.4 'Nunito Sans', sans-serif; color: #F4F1EC;">HOVER<br>#45403A</div>
+            <div style="background: #57514A; padding: 12px 10px; font: 700 11px/1.4 'Nunito Sans', sans-serif; color: #F4F1EC;">ACTIVE<br>#57514A</div>
+            <div style="background: #EDE9E2; padding: 12px 10px; font: 700 11px/1.4 'Nunito Sans', sans-serif; color: #2E2A26;">TINT<br>#EDE9E2</div>
+          </div>
+        </div>
+
+        <div style="border: 1px solid #EFE8DC; border-radius: 18px; overflow: hidden; background: #FFF;">
+          <div style="background: #33203A; padding: 18px 16px 16px; display: flex; flex-direction: column; gap: 2px;"><span style="font: 700 16px/1.2 'Nunito Sans', sans-serif; color: #FCDCE7;">Plum</span><span style="font: 600 12px/1.2 'Nunito Sans', sans-serif; color: rgba(252,220,231,0.72);">#33203A · default</span></div>
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr);">
+            <div style="background: #472F50; padding: 12px 10px; font: 700 11px/1.4 'Nunito Sans', sans-serif; color: #FCDCE7;">HOVER<br>#472F50</div>
+            <div style="background: #573C61; padding: 12px 10px; font: 700 11px/1.4 'Nunito Sans', sans-serif; color: #FCDCE7;">ACTIVE<br>#573C61</div>
+            <div style="background: #EFE6F2; padding: 12px 10px; font: 700 11px/1.4 'Nunito Sans', sans-serif; color: #33203A;">TINT<br>#EFE6F2</div>
+          </div>
+        </div>
+
+        <div style="border: 1px solid #EFE8DC; border-radius: 18px; overflow: hidden; background: #FFF;">
+          <div style="background: #251F3D; padding: 18px 16px 16px; display: flex; flex-direction: column; gap: 2px;"><span style="font: 700 16px/1.2 'Nunito Sans', sans-serif; color: #EDE9FA;">Midnight</span><span style="font: 600 12px/1.2 'Nunito Sans', sans-serif; color: rgba(237,233,250,0.72);">#251F3D · default</span></div>
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr);">
+            <div style="background: #372E56; padding: 12px 10px; font: 700 11px/1.4 'Nunito Sans', sans-serif; color: #EDE9FA;">HOVER<br>#372E56</div>
+            <div style="background: #483D6C; padding: 12px 10px; font: 700 11px/1.4 'Nunito Sans', sans-serif; color: #EDE9FA;">ACTIVE<br>#483D6C</div>
+            <div style="background: #E9E6F5; padding: 12px 10px; font: 700 11px/1.4 'Nunito Sans', sans-serif; color: #251F3D;">TINT<br>#E9E6F5</div>
+          </div>
+        </div>
+
+        <div style="border: 1px solid #EFE8DC; border-radius: 18px; overflow: hidden; background: #FFF;">
+          <div style="background: #16302A; padding: 18px 16px 16px; display: flex; flex-direction: column; gap: 2px;"><span style="font: 700 16px/1.2 'Nunito Sans', sans-serif; color: #D8F2E9;">Pine</span><span style="font: 600 12px/1.2 'Nunito Sans', sans-serif; color: rgba(216,242,233,0.72);">#16302A · default</span></div>
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr);">
+            <div style="background: #24463D; padding: 12px 10px; font: 700 11px/1.4 'Nunito Sans', sans-serif; color: #D8F2E9;">HOVER<br>#24463D</div>
+            <div style="background: #325A4F; padding: 12px 10px; font: 700 11px/1.4 'Nunito Sans', sans-serif; color: #D8F2E9;">ACTIVE<br>#325A4F</div>
+            <div style="background: #E4F1EC; padding: 12px 10px; font: 700 11px/1.4 'Nunito Sans', sans-serif; color: #16302A;">TINT<br>#E4F1EC</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div id="2b" style="display: flex; flex-direction: column; gap: 20px;">
+      <div style="display: flex; align-items: baseline; gap: 14px;">
+        <span style="font: 700 12px/1 'Nunito Sans', sans-serif; letter-spacing: 0.1em; color: #FFF; background: #2E2A26; padding: 7px 11px; border-radius: 999px;">2B</span>
+        <h2 style="margin: 0; font: 700 26px/1 'Baloo 2', cursive; color: #2E2A26;">Three combos, live states</h2>
+        <span style="font: 400 14px/1.4 'Nunito Sans', sans-serif; color: #8A8377;">Buttons and cards respond to hover and press. Static strips below each show all three states side by side.</span>
+      </div>
+
+      <div style="display: flex; flex-wrap: wrap; gap: 24px; align-items: flex-start;">
+
+        <div style="width: 545px; background: #FFFBFC; border: 1px solid #F2DDE4; border-radius: 24px; padding: 26px; display: flex; flex-direction: column; gap: 18px; box-shadow: 0 18px 40px -28px rgba(46,42,38,0.35);">
+          <div style="display: flex; flex-direction: column; gap: 6px;">
+            <div style="font: 700 22px/1.1 'Baloo 2', cursive; color: #33203A;">Berry Pop</div>
+            <div style="font: 400 14px/1.5 'Nunito Sans', sans-serif; color: #6B5566;">Raspberry primary · Sky secondary · Vanilla accent · Powder surface · Plum text</div>
+          </div>
+          <div style="display: flex; gap: 8px;">
+            <div style="flex: 1; height: 34px; border-radius: 8px; background: #E8467C;"></div>
+            <div style="flex: 1; height: 34px; border-radius: 8px; background: #4FA9F5;"></div>
+            <div style="flex: 1; height: 34px; border-radius: 8px; background: #FFD86B;"></div>
+            <div style="flex: 1; height: 34px; border-radius: 8px; background: #FCDCE7;"></div>
+            <div style="flex: 1; height: 34px; border-radius: 8px; background: #33203A;"></div>
+          </div>
+          <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+            <button type="button" style="font: 700 14px/1 'Nunito Sans', sans-serif; color: #FFF; background: #E8467C; border: none; padding: 14px 22px; border-radius: 12px; cursor: pointer; transition: background 120ms, transform 80ms;" style-hover="background: #CE3568;" style-active="background: #B22A56; transform: translateY(1px);">Book a party</button>
+            <button type="button" style="font: 700 14px/1 'Nunito Sans', sans-serif; color: #33203A; background: #FCDCE7; border: none; padding: 14px 22px; border-radius: 12px; cursor: pointer; transition: background 120ms, transform 80ms;" style-hover="background: #F7C6D8;" style-active="background: #EFAEC5; transform: translateY(1px);">See packages</button>
+            <button type="button" style="font: 700 14px/1 'Nunito Sans', sans-serif; color: #1A5D97; background: transparent; border: 2px solid #4FA9F5; padding: 12px 20px; border-radius: 12px; cursor: pointer; transition: background 120ms, color 120ms;" style-hover="background: #E4F1FE;" style-active="background: #4FA9F5; color: #FFF;">Ask a question</button>
+          </div>
+          <div style="background: #FFF; border: 1px solid #F6E4EB; border-radius: 16px; padding: 16px; display: flex; align-items: center; justify-content: space-between; gap: 12px; cursor: pointer; transition: border-color 120ms, box-shadow 120ms, transform 100ms;" style-hover="border-color: #E8467C; box-shadow: 0 10px 24px -16px rgba(232,70,124,0.7); transform: translateY(-2px);" style-active="border-color: #B22A56; transform: translateY(0px); box-shadow: none;">
+            <div style="display: flex; flex-direction: column; gap: 4px;">
+              <div style="font: 700 16px/1.2 'Baloo 2', cursive; color: #33203A;">Sat 14 Sept · 3:00 PM</div>
+              <div style="font: 600 12px/1 'Nunito Sans', sans-serif; color: #8B7684;">Hoverable slot card</div>
+            </div>
+            <span style="font: 700 12px/1 'Nunito Sans', sans-serif; color: #6B4A00; background: #FFF6DC; padding: 8px 10px; border-radius: 8px;">3 left</span>
+          </div>
+          <div style="display: flex; gap: 8px;">
+            <div style="flex: 1; text-align: center; font: 700 12px/1.5 'Nunito Sans', sans-serif; color: #FFF; background: #E8467C; padding: 10px; border-radius: 10px;">DEFAULT<br>#E8467C</div>
+            <div style="flex: 1; text-align: center; font: 700 12px/1.5 'Nunito Sans', sans-serif; color: #FFF; background: #CE3568; padding: 10px; border-radius: 10px;">HOVER<br>#CE3568</div>
+            <div style="flex: 1; text-align: center; font: 700 12px/1.5 'Nunito Sans', sans-serif; color: #FFF; background: #B22A56; padding: 10px; border-radius: 10px;">ACTIVE<br>#B22A56</div>
+          </div>
+        </div>
+
+        <div style="width: 545px; background: #FBFEFD; border: 1px solid #D9EBE6; border-radius: 24px; padding: 26px; display: flex; flex-direction: column; gap: 18px; box-shadow: 0 18px 40px -28px rgba(46,42,38,0.35);">
+          <div style="display: flex; flex-direction: column; gap: 6px;">
+            <div style="font: 700 22px/1.1 'Baloo 2', cursive; color: #16302A;">Mint Sherbet</div>
+            <div style="font: 400 14px/1.5 'Nunito Sans', sans-serif; color: #46615A;">Teal primary · Fuchsia secondary · Lemon accent · Frost surface · Pine text</div>
+          </div>
+          <div style="display: flex; gap: 8px;">
+            <div style="flex: 1; height: 34px; border-radius: 8px; background: #0FA98C;"></div>
+            <div style="flex: 1; height: 34px; border-radius: 8px; background: #F2568F;"></div>
+            <div style="flex: 1; height: 34px; border-radius: 8px; background: #FFCE1F;"></div>
+            <div style="flex: 1; height: 34px; border-radius: 8px; background: #D8F2E9;"></div>
+            <div style="flex: 1; height: 34px; border-radius: 8px; background: #16302A;"></div>
+          </div>
+          <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+            <button type="button" style="font: 700 14px/1 'Nunito Sans', sans-serif; color: #FFF; background: #0FA98C; border: none; padding: 14px 22px; border-radius: 10px; cursor: pointer; transition: background 120ms, transform 80ms;" style-hover="background: #0A8F76;" style-active="background: #06755F; transform: translateY(1px);">Book a party</button>
+            <button type="button" style="font: 700 14px/1 'Nunito Sans', sans-serif; color: #16302A; background: #D8F2E9; border: none; padding: 14px 22px; border-radius: 10px; cursor: pointer; transition: background 120ms, transform 80ms;" style-hover="background: #C0E8DA;" style-active="background: #A6DBC9; transform: translateY(1px);">See packages</button>
+            <button type="button" style="font: 700 14px/1 'Nunito Sans', sans-serif; color: #BC3466; background: transparent; border: 2px solid #F2568F; padding: 12px 20px; border-radius: 10px; cursor: pointer; transition: background 120ms, color 120ms;" style-hover="background: #FDE8EF;" style-active="background: #F2568F; color: #FFF;">Ask a question</button>
+          </div>
+          <div style="background: #FFF; border: 1px solid #E1F0EB; border-radius: 16px; padding: 16px; display: flex; align-items: center; justify-content: space-between; gap: 12px; cursor: pointer; transition: border-color 120ms, box-shadow 120ms, transform 100ms;" style-hover="border-color: #0FA98C; box-shadow: 0 10px 24px -16px rgba(15,169,140,0.7); transform: translateY(-2px);" style-active="border-color: #06755F; transform: translateY(0px); box-shadow: none;">
+            <div style="display: flex; flex-direction: column; gap: 4px;">
+              <div style="font: 700 16px/1.2 'Baloo 2', cursive; color: #16302A;">Sat 14 Sept · 3:00 PM</div>
+              <div style="font: 600 12px/1 'Nunito Sans', sans-serif; color: #6E8A83;">Hoverable slot card</div>
+            </div>
+            <span style="font: 700 12px/1 'Nunito Sans', sans-serif; color: #6B5400; background: #FFF6D2; padding: 8px 10px; border-radius: 8px;">3 left</span>
+          </div>
+          <div style="display: flex; gap: 8px;">
+            <div style="flex: 1; text-align: center; font: 700 12px/1.5 'Nunito Sans', sans-serif; color: #FFF; background: #0FA98C; padding: 10px; border-radius: 10px;">DEFAULT<br>#0FA98C</div>
+            <div style="flex: 1; text-align: center; font: 700 12px/1.5 'Nunito Sans', sans-serif; color: #FFF; background: #0A8F76; padding: 10px; border-radius: 10px;">HOVER<br>#0A8F76</div>
+            <div style="flex: 1; text-align: center; font: 700 12px/1.5 'Nunito Sans', sans-serif; color: #FFF; background: #06755F; padding: 10px; border-radius: 10px;">ACTIVE<br>#06755F</div>
+          </div>
+        </div>
+
+        <div style="width: 545px; background: #FCFBFF; border: 1px solid #E4E0F0; border-radius: 24px; padding: 26px; display: flex; flex-direction: column; gap: 18px; box-shadow: 0 18px 40px -28px rgba(46,42,38,0.35);">
+          <div style="display: flex; flex-direction: column; gap: 6px;">
+            <div style="font: 700 22px/1.1 'Baloo 2', cursive; color: #251F3D;">Cotton Candy</div>
+            <div style="font: 400 14px/1.5 'Nunito Sans', sans-serif; color: #574F73;">Aqua primary · Blossom secondary · Vanilla accent · Peach surface · Midnight text</div>
+          </div>
+          <div style="display: flex; gap: 8px;">
+            <div style="flex: 1; height: 34px; border-radius: 8px; background: #26C6C6;"></div>
+            <div style="flex: 1; height: 34px; border-radius: 8px; background: #FF9BB3;"></div>
+            <div style="flex: 1; height: 34px; border-radius: 8px; background: #FFD86B;"></div>
+            <div style="flex: 1; height: 34px; border-radius: 8px; background: #FFE3D2;"></div>
+            <div style="flex: 1; height: 34px; border-radius: 8px; background: #251F3D;"></div>
+          </div>
+          <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+            <button type="button" style="font: 700 14px/1 'Nunito Sans', sans-serif; color: #023B3B; background: #26C6C6; border: none; padding: 14px 22px; border-radius: 999px; cursor: pointer; transition: background 120ms, color 120ms, transform 80ms;" style-hover="background: #1BA9A9; color: #E4F8F8;" style-active="background: #128C8C; color: #E4F8F8; transform: translateY(1px);">Book a party</button>
+            <button type="button" style="font: 700 14px/1 'Nunito Sans', sans-serif; color: #6B1930; background: #FFE3D2; border: none; padding: 14px 22px; border-radius: 999px; cursor: pointer; transition: background 120ms, transform 80ms;" style-hover="background: #FCD2B9;" style-active="background: #F3BF9F; transform: translateY(1px);">See packages</button>
+            <button type="button" style="font: 700 14px/1 'Nunito Sans', sans-serif; color: #8E2A45; background: transparent; border: 2px solid #FF9BB3; padding: 12px 20px; border-radius: 999px; cursor: pointer; transition: background 120ms, color 120ms;" style-hover="background: #FFEBF0;" style-active="background: #E45F81; color: #FFF;">Ask a question</button>
+          </div>
+          <div style="background: #FFF; border: 1px solid #EAE5F7; border-radius: 16px; padding: 16px; display: flex; align-items: center; justify-content: space-between; gap: 12px; cursor: pointer; transition: border-color 120ms, box-shadow 120ms, transform 100ms;" style-hover="border-color: #26C6C6; box-shadow: 0 10px 24px -16px rgba(38,198,198,0.75); transform: translateY(-2px);" style-active="border-color: #128C8C; transform: translateY(0px); box-shadow: none;">
+            <div style="display: flex; flex-direction: column; gap: 4px;">
+              <div style="font: 700 16px/1.2 'Baloo 2', cursive; color: #251F3D;">Sat 14 Sept · 3:00 PM</div>
+              <div style="font: 600 12px/1 'Nunito Sans', sans-serif; color: #857EA0;">Hoverable slot card</div>
+            </div>
+            <span style="font: 700 12px/1 'Nunito Sans', sans-serif; color: #5C4200; background: #FFF6DC; padding: 8px 10px; border-radius: 8px;">3 left</span>
+          </div>
+          <div style="display: flex; gap: 8px;">
+            <div style="flex: 1; text-align: center; font: 700 12px/1.5 'Nunito Sans', sans-serif; color: #023B3B; background: #26C6C6; padding: 10px; border-radius: 10px;">DEFAULT<br>#26C6C6</div>
+            <div style="flex: 1; text-align: center; font: 700 12px/1.5 'Nunito Sans', sans-serif; color: #E4F8F8; background: #1BA9A9; padding: 10px; border-radius: 10px;">HOVER<br>#1BA9A9</div>
+            <div style="flex: 1; text-align: center; font: 700 12px/1.5 'Nunito Sans', sans-serif; color: #E4F8F8; background: #128C8C; padding: 10px; border-radius: 10px;">ACTIVE<br>#128C8C</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding: 32px 48px 80px; font-family: 'Nunito Sans', sans-serif;">
+  <div style="max-width: 1720px; margin: 0 auto; display: flex; flex-direction: column; gap: 40px;">
+    <div style="display: flex; flex-direction: column; gap: 10px; max-width: 760px;">
+      <div style="font: 600 13px/1 'Nunito Sans', sans-serif; letter-spacing: 0.14em; text-transform: uppercase; color: #8A8377;">Kids party booking site · direction options</div>
+      <h1 style="margin: 0; font: 700 46px/1.05 'Baloo 2', cursive; color: #2E2A26; letter-spacing: -0.01em;">Four color &amp; type pairings</h1>
+      <p style="margin: 0; font: 400 17px/1.6 'Nunito Sans', sans-serif; color: #5C554C; text-wrap: pretty;">Bright accents on a soft pastel base — lively color that never shouts. Each card shows the palette with hex codes, the type specimen, and a small booking-UI sample. Reply with a number (<a href="#1a">1a</a>, <a href="#1b">1b</a>, <a href="#1c">1c</a>, <a href="#1d">1d</a>) and I'll build it out into a full site style.</p>
+    </div>
+
+    <div style="display: flex; flex-wrap: wrap; gap: 32px; align-items: flex-start;">
+
+      <div id="1a" style="width: 820px; background: #FFFDF9; border: 1px solid #E7E0D5; border-radius: 28px; overflow: hidden; box-shadow: 0 18px 40px -28px rgba(46,42,38,0.35);">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 16px; padding: 26px 32px 20px;">
+          <div style="display: flex; align-items: baseline; gap: 14px;">
+            <span style="font: 700 12px/1 'Nunito Sans', sans-serif; letter-spacing: 0.1em; color: #FFF; background: #FF6B57; padding: 7px 11px; border-radius: 999px;">1A</span>
+            <h2 style="margin: 0; font: 700 30px/1 'Baloo 2', cursive; color: #2E2A26;">Caramel</h2>
+          </div>
+          <div style="font: 400 14px/1.4 'Nunito Sans', sans-serif; color: #8A8377;">Baloo 2 + Nunito Sans</div>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(5, 1fr);">
+          <div style="background: #FF6B57; height: 104px; display: flex; align-items: flex-end; padding: 12px; font: 700 12px/1.3 'Nunito Sans', sans-serif; color: #FFF6F4;">#FF6B57<br>Coral</div>
+          <div style="background: #FFC145; height: 104px; display: flex; align-items: flex-end; padding: 12px; font: 700 12px/1.3 'Nunito Sans', sans-serif; color: #6B4A00;">#FFC145<br>Sunbeam</div>
+          <div style="background: #3FC1A0; height: 104px; display: flex; align-items: flex-end; padding: 12px; font: 700 12px/1.3 'Nunito Sans', sans-serif; color: #06382C;">#3FC1A0<br>Mint</div>
+          <div style="background: #FFE3D2; height: 104px; display: flex; align-items: flex-end; padding: 12px; font: 700 12px/1.3 'Nunito Sans', sans-serif; color: #8A5334;">#FFE3D2<br>Peach</div>
+          <div style="background: #2E2A26; height: 104px; display: flex; align-items: flex-end; padding: 12px; font: 700 12px/1.3 'Nunito Sans', sans-serif; color: #F4F1EC;">#2E2A26<br>Ink</div>
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 300px; gap: 28px; padding: 28px 32px 32px;">
+          <div style="display: flex; flex-direction: column; gap: 12px;">
+            <div style="font: 800 56px/1 'Baloo 2', cursive; color: #2E2A26; letter-spacing: -0.02em;">Parties,<br>fully handled</div>
+            <div style="font: 400 15px/1.65 'Nunito Sans', sans-serif; color: #5C554C; text-wrap: pretty;">Baloo 2's rounded forms read like balloons — playful without going babyish. Nunito Sans carries the long stuff: program details, policies, reviews.</div>
+            <div style="display: flex; gap: 10px; flex-wrap: wrap; padding-top: 4px;">
+              <span style="font: 700 14px/1 'Nunito Sans', sans-serif; color: #FFF; background: #FF6B57; padding: 13px 20px; border-radius: 999px;">Book a party</span>
+              <span style="font: 700 14px/1 'Nunito Sans', sans-serif; color: #2E2A26; background: #FFE3D2; padding: 13px 20px; border-radius: 999px;">See packages</span>
+            </div>
+          </div>
+          <div style="background: #FFF; border: 1px solid #F0E7DA; border-radius: 20px; padding: 18px; display: flex; flex-direction: column; gap: 12px;">
+            <div style="font: 700 18px/1.2 'Baloo 2', cursive; color: #2E2A26;">Bubble Show</div>
+            <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+              <span style="font: 600 12px/1 'Nunito Sans', sans-serif; color: #06382C; background: #D6F3EA; padding: 7px 10px; border-radius: 8px;">45 min</span>
+              <span style="font: 600 12px/1 'Nunito Sans', sans-serif; color: #6B4A00; background: #FFEFC6; padding: 7px 10px; border-radius: 8px;">Ages 3–8</span>
+            </div>
+            <div style="font: 800 26px/1 'Baloo 2', cursive; color: #FF6B57;">from $180</div>
+            <div style="font: 700 13px/1 'Nunito Sans', sans-serif; color: #FFF; background: #2E2A26; padding: 12px; border-radius: 12px; text-align: center;">Pick a date</div>
+          </div>
+        </div>
+      </div>
+
+      <div id="1b" style="width: 820px; background: #FFFBFC; border: 1px solid #F2DDE4; border-radius: 28px; overflow: hidden; box-shadow: 0 18px 40px -28px rgba(46,42,38,0.35);">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 16px; padding: 26px 32px 20px;">
+          <div style="display: flex; align-items: baseline; gap: 14px;">
+            <span style="font: 700 12px/1 'Manrope', sans-serif; letter-spacing: 0.1em; color: #FFF; background: #E8467C; padding: 7px 11px; border-radius: 999px;">1B</span>
+            <h2 style="margin: 0; font: 600 30px/1 'Fredoka', cursive; color: #33203A;">Gumdrop</h2>
+          </div>
+          <div style="font: 400 14px/1.4 'Manrope', sans-serif; color: #957E8B;">Fredoka + Manrope</div>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(5, 1fr);">
+          <div style="background: #E8467C; height: 104px; display: flex; align-items: flex-end; padding: 12px; font: 700 12px/1.3 'Manrope', sans-serif; color: #FFF0F5;">#E8467C<br>Raspberry</div>
+          <div style="background: #FF8A3D; height: 104px; display: flex; align-items: flex-end; padding: 12px; font: 700 12px/1.3 'Manrope', sans-serif; color: #4A1E00;">#FF8A3D<br>Tangerine</div>
+          <div style="background: #4FA9F5; height: 104px; display: flex; align-items: flex-end; padding: 12px; font: 700 12px/1.3 'Manrope', sans-serif; color: #04294A;">#4FA9F5<br>Sky</div>
+          <div style="background: #FCDCE7; height: 104px; display: flex; align-items: flex-end; padding: 12px; font: 700 12px/1.3 'Manrope', sans-serif; color: #A03A63;">#FCDCE7<br>Powder</div>
+          <div style="background: #33203A; height: 104px; display: flex; align-items: flex-end; padding: 12px; font: 700 12px/1.3 'Manrope', sans-serif; color: #FCDCE7;">#33203A<br>Plum</div>
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 300px; gap: 28px; padding: 28px 32px 32px;">
+          <div style="display: flex; flex-direction: column; gap: 12px;">
+            <div style="font: 600 56px/1 'Fredoka', cursive; color: #33203A; letter-spacing: -0.015em;">The happiest<br>birthday yet</div>
+            <div style="font: 400 15px/1.65 'Manrope', sans-serif; color: #6B5566; text-wrap: pretty;">The candy-shop option: Fredoka is loud on its own, so the color sits on a powder-pink base. Manrope keeps forms, prices and checkout feeling tidy.</div>
+            <div style="display: flex; gap: 10px; flex-wrap: wrap; padding-top: 4px;">
+              <span style="font: 700 14px/1 'Manrope', sans-serif; color: #FFF; background: #E8467C; padding: 13px 20px; border-radius: 14px;">Book a party</span>
+              <span style="font: 700 14px/1 'Manrope', sans-serif; color: #33203A; background: #FCDCE7; padding: 13px 20px; border-radius: 14px;">See packages</span>
+            </div>
+          </div>
+          <div style="background: #FFF; border: 1px solid #F6E4EB; border-radius: 20px; padding: 18px; display: flex; flex-direction: column; gap: 12px;">
+            <div style="font: 600 18px/1.2 'Fredoka', cursive; color: #33203A;">Entertainer + Face Paint</div>
+            <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+              <span style="font: 600 12px/1 'Manrope', sans-serif; color: #04294A; background: #DCEDFD; padding: 7px 10px; border-radius: 8px;">2 hours</span>
+              <span style="font: 600 12px/1 'Manrope', sans-serif; color: #4A1E00; background: #FFE7D3; padding: 7px 10px; border-radius: 8px;">Ages 4–10</span>
+            </div>
+            <div style="font: 600 26px/1 'Fredoka', cursive; color: #E8467C;">from $240</div>
+            <div style="font: 700 13px/1 'Manrope', sans-serif; color: #FFF; background: #33203A; padding: 12px; border-radius: 12px; text-align: center;">Pick a date</div>
+          </div>
+        </div>
+      </div>
+
+      <div id="1c" style="width: 820px; background: #FCFBFF; border: 1px solid #E4E0F0; border-radius: 28px; overflow: hidden; box-shadow: 0 18px 40px -28px rgba(46,42,38,0.35);">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 16px; padding: 26px 32px 20px;">
+          <div style="display: flex; align-items: baseline; gap: 14px;">
+            <span style="font: 700 12px/1 'Mulish', sans-serif; letter-spacing: 0.1em; color: #FFF; background: #7B5CE0; padding: 7px 11px; border-radius: 999px;">1C</span>
+            <h2 style="margin: 0; font: 700 30px/1 'Quicksand', sans-serif; color: #251F3D;">Marshmallow</h2>
+          </div>
+          <div style="font: 400 14px/1.4 'Mulish', sans-serif; color: #857EA0;">Quicksand + Mulish</div>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(5, 1fr);">
+          <div style="background: #7B5CE0; height: 104px; display: flex; align-items: flex-end; padding: 12px; font: 700 12px/1.3 'Mulish', sans-serif; color: #F1ECFF;">#7B5CE0<br>Lavender</div>
+          <div style="background: #26C6C6; height: 104px; display: flex; align-items: flex-end; padding: 12px; font: 700 12px/1.3 'Mulish', sans-serif; color: #023B3B;">#26C6C6<br>Aqua</div>
+          <div style="background: #FF9BB3; height: 104px; display: flex; align-items: flex-end; padding: 12px; font: 700 12px/1.3 'Mulish', sans-serif; color: #6B1930;">#FF9BB3<br>Blossom</div>
+          <div style="background: #FFD86B; height: 104px; display: flex; align-items: flex-end; padding: 12px; font: 700 12px/1.3 'Mulish', sans-serif; color: #5C4200;">#FFD86B<br>Vanilla</div>
+          <div style="background: #251F3D; height: 104px; display: flex; align-items: flex-end; padding: 12px; font: 700 12px/1.3 'Mulish', sans-serif; color: #EDE9FA;">#251F3D<br>Midnight</div>
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 300px; gap: 28px; padding: 28px 32px 32px;">
+          <div style="display: flex; flex-direction: column; gap: 12px;">
+            <div style="font: 700 56px/1 'Quicksand', sans-serif; color: #251F3D; letter-spacing: -0.02em;">A little<br>bit magic</div>
+            <div style="font: 400 15px/1.65 'Mulish', sans-serif; color: #574F73; text-wrap: pretty;">The truest read on "pastel but bright": saturated lavender and aqua as accents, blossom and vanilla as block backgrounds. Suits premium venues and quests.</div>
+            <div style="display: flex; gap: 10px; flex-wrap: wrap; padding-top: 4px;">
+              <span style="font: 700 14px/1 'Mulish', sans-serif; color: #FFF; background: #7B5CE0; padding: 13px 20px; border-radius: 999px;">Book a party</span>
+              <span style="font: 700 14px/1 'Mulish', sans-serif; color: #251F3D; background: #E8E2FB; padding: 13px 20px; border-radius: 999px;">See packages</span>
+            </div>
+          </div>
+          <div style="background: #FFF; border: 1px solid #EAE5F7; border-radius: 20px; padding: 18px; display: flex; flex-direction: column; gap: 12px;">
+            <div style="font: 700 18px/1.2 'Quicksand', sans-serif; color: #251F3D;">Pirate Treasure Quest</div>
+            <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+              <span style="font: 600 12px/1 'Mulish', sans-serif; color: #023B3B; background: #D3F4F4; padding: 7px 10px; border-radius: 8px;">90 min</span>
+              <span style="font: 600 12px/1 'Mulish', sans-serif; color: #6B1930; background: #FFE1E8; padding: 7px 10px; border-radius: 8px;">Ages 6–12</span>
+            </div>
+            <div style="font: 700 26px/1 'Quicksand', sans-serif; color: #7B5CE0;">from $320</div>
+            <div style="font: 700 13px/1 'Mulish', sans-serif; color: #FFF; background: #251F3D; padding: 12px; border-radius: 12px; text-align: center;">Pick a date</div>
+          </div>
+        </div>
+      </div>
+
+      <div id="1d" style="width: 820px; background: #FBFEFD; border: 1px solid #D9EBE6; border-radius: 28px; overflow: hidden; box-shadow: 0 18px 40px -28px rgba(46,42,38,0.35);">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 16px; padding: 26px 32px 20px;">
+          <div style="display: flex; align-items: baseline; gap: 14px;">
+            <span style="font: 700 12px/1 'Figtree', sans-serif; letter-spacing: 0.1em; color: #FFF; background: #0FA98C; padding: 7px 11px; border-radius: 999px;">1D</span>
+            <h2 style="margin: 0; font: 700 30px/1 'Bricolage Grotesque', sans-serif; color: #16302A;">Confetti</h2>
+          </div>
+          <div style="font: 400 14px/1.4 'Figtree', sans-serif; color: #6E8A83;">Bricolage Grotesque + Figtree</div>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(5, 1fr);">
+          <div style="background: #0FA98C; height: 104px; display: flex; align-items: flex-end; padding: 12px; font: 700 12px/1.3 'Figtree', sans-serif; color: #E6FFF8;">#0FA98C<br>Teal</div>
+          <div style="background: #FFCE1F; height: 104px; display: flex; align-items: flex-end; padding: 12px; font: 700 12px/1.3 'Figtree', sans-serif; color: #4A3A00;">#FFCE1F<br>Lemon</div>
+          <div style="background: #F2568F; height: 104px; display: flex; align-items: flex-end; padding: 12px; font: 700 12px/1.3 'Figtree', sans-serif; color: #FFEAF2;">#F2568F<br>Fuchsia</div>
+          <div style="background: #D8F2E9; height: 104px; display: flex; align-items: flex-end; padding: 12px; font: 700 12px/1.3 'Figtree', sans-serif; color: #16302A;">#D8F2E9<br>Frost</div>
+          <div style="background: #16302A; height: 104px; display: flex; align-items: flex-end; padding: 12px; font: 700 12px/1.3 'Figtree', sans-serif; color: #D8F2E9;">#16302A<br>Pine</div>
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 300px; gap: 28px; padding: 28px 32px 32px;">
+          <div style="display: flex; flex-direction: column; gap: 12px;">
+            <div style="font: 800 56px/1 'Bricolage Grotesque', sans-serif; color: #16302A; letter-spacing: -0.03em;">Kids thrilled.<br>Parents relaxed.</div>
+            <div style="font: 400 15px/1.65 'Figtree', sans-serif; color: #46615A; text-wrap: pretty;">The grown-up take on bright: a chunky display grotesque with clean Figtree underneath. Parents read it as a dependable service, and the color still says party.</div>
+            <div style="display: flex; gap: 10px; flex-wrap: wrap; padding-top: 4px;">
+              <span style="font: 700 14px/1 'Figtree', sans-serif; color: #FFF; background: #0FA98C; padding: 13px 20px; border-radius: 10px;">Book a party</span>
+              <span style="font: 700 14px/1 'Figtree', sans-serif; color: #16302A; background: #D8F2E9; padding: 13px 20px; border-radius: 10px;">See packages</span>
+            </div>
+          </div>
+          <div style="background: #FFF; border: 1px solid #E1F0EB; border-radius: 20px; padding: 18px; display: flex; flex-direction: column; gap: 12px;">
+            <div style="font: 700 18px/1.2 'Bricolage Grotesque', sans-serif; color: #16302A;">Science Lab Show</div>
+            <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+              <span style="font: 600 12px/1 'Figtree', sans-serif; color: #4A3A00; background: #FFF3C4; padding: 7px 10px; border-radius: 8px;">60 min</span>
+              <span style="font: 600 12px/1 'Figtree', sans-serif; color: #7A1741; background: #FFDCE8; padding: 7px 10px; border-radius: 8px;">Ages 7–13</span>
+            </div>
+            <div style="font: 800 26px/1 'Bricolage Grotesque', sans-serif; color: #0FA98C;">from $260</div>
+            <div style="font: 700 13px/1 'Figtree', sans-serif; color: #FFF; background: #16302A; padding: 12px; border-radius: 12px; text-align: center;">Pick a date</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+</x-dc>
+</body>
+</html>
